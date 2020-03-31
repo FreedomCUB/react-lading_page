@@ -6,18 +6,21 @@ const Hero = () => {
       <div className="contenido-hero contenedor">
         <h1>Aprende algo nuevo</h1>
         <p>Todos los cursos a $15</p>
-        <form  id="busqueda"  className="formulario">
+        <form id="busqueda" className="formulario">
+        
           <input
             className=""
             type="text"
             placeholder="¿Que te gustaría Aprender?"
             id="buscador"
           />
+          
           <input
             type="submit"
             id="submit-buscador"
             className="submit-buscador"
           />
+          <label htmlFor="buscador">Busca los mejores cursos en linea</label>
         </form>
       </div>
     </div>

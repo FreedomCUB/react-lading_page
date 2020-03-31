@@ -6,6 +6,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: $fuente_principal;
 }
 
@@ -92,6 +93,7 @@ img {
     background-color: $gris;
     border: 0;
     outline: none;
+    margin-bottom: 1rem;
     &::placeholder {
       text-indent: 1rem;
     }
@@ -224,7 +226,7 @@ img {
 
   .contenedor-footer {
     display: flex;
-    
+
     flex-direction: column;
     @include telefono() {
       flex-direction: row;
@@ -239,7 +241,7 @@ img {
 
   .enlace {
     color: $negro;
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
     text-decoration: none;
   }
 }
