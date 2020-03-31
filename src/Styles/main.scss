@@ -1,0 +1,245 @@
+@import "variables";
+@import "mixins";
+
+html {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family: $fuente_principal;
+}
+
+*,
+*:after,
+*:before {
+  @include box-sizing(inherit);
+}
+
+img {
+  max-width: 100%;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    padding: 1.4rem 0;
+  }
+}
+
+.carrito-compras {
+  position: relative;
+  &:hover .contenido {
+    position: absolute;
+    border: 1px solid darken($gris, 10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $blanco;
+    padding: 1rem;
+    right: 0;
+    width: 340px;
+    text-align: center;
+
+    img {
+      width: 50%;
+      border: 1px solid darken($gris2, 10);
+    }
+
+    p:last-of-type {
+      font-weight: 900;
+      color: $verde;
+    }
+
+    .boton {
+      @include boton($secundario);
+    }
+  }
+}
+
+.oculto {
+  display: none;
+}
+
+.hero {
+  @include background-img($img_hero);
+  background-size: cover;
+  min-height: 24rem;
+  color: $blanco;
+  display: flex;
+  align-items: center;
+}
+
+.contenido-hero {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 400;
+    font-size: 2.6rem;
+  }
+  input:first-of-type {
+    width: 100%;
+    height: 3rem;
+    background-color: $gris;
+    border: 0;
+    outline: none;
+    &::placeholder {
+      text-indent: 1rem;
+    }
+  }
+
+  .formulario {
+    position: relative;
+    @include tablet() {
+      width: 40%;
+    }
+  }
+  .submit-buscador {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    @include background-img($img_lupa);
+    background-color: $gris;
+    text-decoration: none;
+    border: none;
+    text-indent: -9999px;
+    background-position: center center;
+    outline: none;
+  }
+}
+
+.barra {
+  min-height: 7rem;
+  display: flex;
+  padding: 1.4rem 0;
+  @include gradient($secundario, $terciario);
+  .iconos {
+    display: flex;
+    flex-direction: column;
+    color: $blanco;
+    @include desktop() {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .icono {
+      flex: 1;
+      text-align: center;
+      background-position: 5% center !important;
+      @include tablet() {
+        background-position: 20% center !important;
+      }
+      @include desktop() {
+        background-position: left center !important;
+      }
+      background-size: 2.4rem;
+
+      &.icono1 {
+        @include background-img($icono1);
+      }
+      &.icono2 {
+        @include background-img($icono2);
+      }
+      &.icono3 {
+        @include background-img($icono3);
+      }
+    }
+  }
+}
+
+.encabezado {
+  margin-top: 2rem;
+}
+.centrado {
+  text-align: center;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .curso {
+    flex: 0 1 100%;
+    @include tablet() {
+      flex: 0 1 calc(33.3% - 1rem);
+    }
+    @include desktop() {
+      flex: 0 1 calc(25% - 1rem);
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+    border: 1px solid darken($gris, 10);
+    .imagen-curso {
+      width: 100%;
+    }
+    .info-curso {
+      padding: 0 1rem 1rem 1rem;
+    }
+    h4 {
+      text-align: center;
+      margin: 0.8rem 1rem 0 0;
+      font-size: 1.2rem;
+    }
+
+    .precio {
+      display: flex;
+      justify-content: space-between;
+      .oferta {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $verde;
+      }
+      .regular {
+        text-decoration: line-through;
+        color: $rojo;
+      }
+    }
+    .boton {
+      @include boton($secundario);
+      text-align: center;
+    }
+  }
+}
+
+.footer {
+  border: 1px solid darken($gris, 10);
+  margin-top: 1rem;
+  padding: 2rem;
+
+  .contenedor-footer {
+    display: flex;
+    
+    flex-direction: column;
+    @include telefono() {
+      flex-direction: row;
+    }
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  flex: 1;
+
+  .enlace {
+    color: $negro;
+    margin-bottom: .4rem;
+    text-decoration: none;
+  }
+}
